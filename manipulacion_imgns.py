@@ -41,7 +41,7 @@ def main():
         for j in range(col):
             #np.random.rand() devuelve un número aleatorio procedente de una distribución
             #uniforme en el intervalo [0,1). Se multiplica * 100 para obtener un 100%
-            if np.random.rand() <= p:
+            if np.random.rand() * 100 <= p:
                 if np.random.randint(2) == 0:
                     c[i,j]=0
                 else:
@@ -49,7 +49,7 @@ def main():
             else:
                 c[i,j]=l[i,j]
     plt.subplot(3,1,3)
-    plt.ylabel("Contaminada\n Al %.2f" % (p*100) + "%")
+    plt.ylabel("Contaminada\n Al %.2f" % (p) + "%")
     plt.imshow(c,cmap='gray')
     plt.show()
     
